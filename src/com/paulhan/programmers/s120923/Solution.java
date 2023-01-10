@@ -19,7 +19,7 @@ public class Solution {
         StringTokenizer st = new StringTokenizer(br.readLine());
         int num = Integer.parseInt(st.nextToken());
         int total = Integer.parseInt(st.nextToken());
-        int[] answer = new Solution().Solution(num, total);
+        int[] answer = new Solution().solution(num, total);
         bw.write(Arrays.toString(answer) + "\n");
 
         bw.flush();
@@ -27,7 +27,7 @@ public class Solution {
         br.close();
     }
 
-    private int[] Solution(int num, int total){
+    private int[] solution(int num, int total){
         int[] answer = new int[num];
         int median = total / num;
         int position = num / 2;
