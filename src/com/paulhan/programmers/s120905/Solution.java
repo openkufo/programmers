@@ -23,6 +23,7 @@ public class Solution {
         }
         
         answer = new int[multipleCount];
+        
         int answerIndex = 0;
         
         for(int i = 0; i < numlist.length; i++) {
