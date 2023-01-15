@@ -1,2 +1,4 @@
 bin/**/test
 src/**/test
+.vscode/
+README.md
