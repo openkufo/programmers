@@ -13,8 +13,6 @@ public class Solution {
         char[] my_char = my_string.toCharArray();
         Arrays.sort(my_char);
         my_string = String.valueOf(my_char);
-        
-        
         return my_string;
     }
 }
