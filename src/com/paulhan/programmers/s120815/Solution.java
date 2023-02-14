@@ -12,7 +12,6 @@ public class Solution {
         while(answer % n != 0){
             answer = 6 * count++;
         }
-
         answer /= 6;
         return answer;
     }
