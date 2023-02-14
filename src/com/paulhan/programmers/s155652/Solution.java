@@ -34,9 +34,8 @@ public class Solution {
                     }
                 }
             }
-
             sb.append(alphabet);
         }
-        return sb.toString(); 
+        return sb.toString();
     }
 }
