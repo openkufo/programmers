@@ -9,7 +9,7 @@ import java.util.StringTokenizer;
 public class Solution {
     public static void main(String[] args) {
         // String[][] test = {{"10:20", "12:30"}, {"10:00", "10:10"}, {"10:20", "12:30"}, {"10:20", "10:30"}};
-        String[][] test = {{"00:00", "00:01"}, {"00:10", "00:20"}};
+        String[][] test = {{"16:00", "16:10"}, {"16:20", "16:30"}, {"16:40", "16:50"}};
         // String[][] test = {{"09:10", "10:10"}, {"10:20", "12:20"}};
         // new String[][]{{"15:00", "17:00"}, {"16:40", "18:20"}, {"14:20", "15:20"}, {"14:10", "19:20"}, {"18:20", "21:20"}}
         // int answer = new Solution().solution(new String[][]{{"15:00", "17:00"}, {"16:40", "18:20"}, {"14:20", "15:20"}, {"14:10", "19:20"}, {"18:20", "21:20"}});
@@ -34,13 +34,13 @@ public class Solution {
         while(!roomList.isEmpty()){
             prevEndTime = roomList.get(0)[1];
             roomList.remove(0);
-
             for(int i = 0; i < roomList.size(); i++){
                 String[] times = roomList.get(i);
                 boolean shouldAddTime = timeToMinute(prevEndTime) <= (timeToMinute(times[0])-10);
                 if(shouldAddTime){
                     prevEndTime = roomList.get(i)[1];
                     roomList.remove(i);
+                    i--;
                 }
             }
 
