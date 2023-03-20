@@ -1,6 +1,5 @@
 package com.paulhan.programmers.s120880;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
@@ -17,11 +16,7 @@ public class Solution {
         System.out.println("[0, -1, 1, -2, 2, 3]");
     }
     public int[] solution(int[] numlist, int n) {
-        // List<Integer> numList = Arrays.stream(numlist).boxed().collect(Collectors.toList());
-        List<Integer> numList = new ArrayList<>();
-        for(int i = 0 ; i < numlist.length; i++){
-            numList.add(numlist[i]);
-        }
+        List<Integer> numList = Arrays.stream(numlist).boxed().collect(Collectors.toList());
         numList.sort(new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {
@@ -37,7 +32,6 @@ public class Solution {
         int[] answer = numList.stream()
                               .mapToInt(Integer::intValue)
                               .toArray();
-                              
         return answer;
     }
 }
