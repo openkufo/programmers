@@ -6,18 +6,19 @@ public class Solution {
         System.out.println("answer : " + answer);
     }
     public int solution(int n) {
-        int answer = 0;
+        int answer = n;
 
         int quotient = n / 3;
         int threeCount = getThreeCount(n);
         System.out.println(threeCount);
 
-        int prevValue = -1;
+        int prevValue = 0;
         int curValue = quotient + threeCount;
         int compareValue = n + curValue;
 
         while(prevValue != curValue){
             curValue = quotient + threeCount;
+
             prevValue = curValue;
         }
 
