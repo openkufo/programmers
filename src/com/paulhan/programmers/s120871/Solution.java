@@ -1,8 +1,5 @@
 package com.paulhan.programmers.s120871;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Solution {
     public static void main(String[] args) {
         int answer = new Solution().solution(40);
