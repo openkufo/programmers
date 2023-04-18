@@ -1,7 +1,5 @@
 package com.paulhan.programmers.s120876;
 
-import java.util.Arrays;
-
 public class Solution {
     public static void main(String[] args) {
         // int answer = new Solution().solution(new int[][]{{-1, 1}, {1, 3}, {3, 9}});

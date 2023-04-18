@@ -1,7 +1,5 @@
 package com.paulhan.programmers.s120883;
 
-import java.util.Arrays;
-
 public class Solution {
     public static void main(String[] args) {
         String[] id_pw = new String[]{"meosseugi", "1234"};

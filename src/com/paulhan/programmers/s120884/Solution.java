@@ -2,7 +2,7 @@ package com.paulhan.programmers.s120884;
 
 public class Solution {
     public static void main(String[] args) {
-        int error = 0;
+        // int error = 0;
         Solution s = new Solution();
         // int answer = new Solution().solution(0);
         int answer = s.solution(1081);

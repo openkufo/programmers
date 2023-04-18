@@ -1,6 +1,5 @@
 package com.paulhan.programmers.s155652;
 
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 

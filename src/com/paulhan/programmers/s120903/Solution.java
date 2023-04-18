@@ -1,7 +1,5 @@
 package com.paulhan.programmers.s120903;
 
-import java.util.regex.Pattern;
-
 public class Solution {
     public static void main(String[] args) {
         String[] s1 = {"a", "b", "c"};

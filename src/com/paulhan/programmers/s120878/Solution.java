@@ -13,18 +13,18 @@ public class Solution {
         return answer;
     }
 
-    private static int gcd(int a, int b){
-        if(a < b){
-            int temp = a;
-            a = b;
-            b = temp;
-        }
+    // private static int gcd(int a, int b){
+    //     if(a < b){
+    //         int temp = a;
+    //         a = b;
+    //         b = temp;
+    //     }
 
-        while(b != 0){
-            int r = a % b;
-            a = b;
-            b = r;
-        }
-        return a;
-    }
+    //     while(b != 0){
+    //         int r = a % b;
+    //         a = b;
+    //         b = r;
+    //     }
+    //     return a;
+    // }
 }

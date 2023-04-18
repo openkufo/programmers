@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class Solution {
     public static void main(String[] args) {
-        int[] answer = new Solution().solution(new String[]{"X591X","X1X5X","X231X", "1XXX1"});
+        // int[] answer = new Solution().solution(new String[]{"X591X","X1X5X","X231X", "1XXX1"});
     }
 
     public int[] solution(String[] maps) {

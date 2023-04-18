@@ -1,6 +1,5 @@
 package com.paulhan.programmers.s120862;
 
-import java.text.Collator;
 import java.util.Arrays;
 
 public class Solution {

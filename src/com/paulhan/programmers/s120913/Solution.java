@@ -1,11 +1,9 @@
 package com.paulhan.programmers.s120913;
 
-import java.util.Arrays;
-
 public class Solution {
 
     public static void main(String[] args) {
-        String[] answer = new Solution().solution("abc1Addfggg4556b", 6);
+        // String[] answer = new Solution().solution("abc1Addfggg4556b", 6);
     }
 
     public String[] solution(String my_str, int n) {

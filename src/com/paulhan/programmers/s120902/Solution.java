@@ -1,6 +1,5 @@
 package com.paulhan.programmers.s120902;
 
-import java.util.Stack;
 import java.util.StringTokenizer;
 
 public class Solution {
