@@ -1,6 +1,7 @@
 package com.paulhan.programmers.s172928;
 
 import java.util.Arrays;
+import java.util.StringTokenizer;
 
 public class Solution {
     public static void main(String[] args) {
@@ -8,18 +9,67 @@ public class Solution {
         System.out.println("answer : " + Arrays.toString(answer));
     }
     public int[] solution(String[] park, String[] routes) {
-        int[] answer = {};
+        int[] answer = new int[2];
         
-        for(int i = 0; i < park.length; i++){
-            
-            System.out.print("loc : ");
-            for(int j = 0; j < park[i].length(); j++){
-                char loc = park[i].charAt(j);
-                System.out.print(loc);
+        for(int col = 0; col < park.length; col++){
+            int row = park[col].indexOf("S");
+            if(row != -1){
+                answer[0] = col;
+                answer[1] = row;
+                break;
             }
-            System.out.println();
         }
 
+        for(int i = 0; i < routes.length; i++){
+            StringTokenizer st = new StringTokenizer(routes[i]);
+            String route = st.nextToken();
+            int cycle = Integer.parseInt(st.nextToken());
+
+            int[] nextPos = posCalc(route);
+            int[] tempPos = answer.clone();
+
+            for(int attempt = 0; attempt < cycle; attempt++){
+                try{
+                    tempPos[0] += nextPos[0];
+                    tempPos[1] += nextPos[1];
+
+                    int col = tempPos[0];
+                    int row = tempPos[1];
+
+                    if(park[col].charAt(row) == 'X'){
+                        tempPos = answer.clone();
+                        break;
+                    }
+                } catch(IndexOutOfBoundsException e) {
+                    tempPos = answer.clone();
+                    break;
+                }
+            }
+            
+            answer = tempPos.clone();
+        }
+        
         return answer;
+    }
+
+    private int[] posCalc(String route){
+        int[] pos;
+        switch (route) {
+            case "E":
+                pos = new int[]{0, 1};
+                break;
+            case "W":
+                pos = new int[]{0, -1};
+                break;
+            case "S":
+                pos = new int[]{1, 0};
+                break;
+            case "N":
+                pos = new int[]{-1, 0};
+                break;
+            default :
+                pos = new int[2];
+        }
+        return pos;
     }
 }
