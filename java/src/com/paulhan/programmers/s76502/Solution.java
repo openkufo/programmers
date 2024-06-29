@@ -1,28 +1,43 @@
-package com.paulhan.programmers.s12909;
+package com.paulhan.programmers.s76502;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.Iterator;
 import java.util.Stack;
 
-public class Solution {
-    public static void main(String[] args) throws Exception {
-        // int test = solution("(()(");
-    }
-
+class Solution {
+    
     static final int BRACKET_LENGTH = 3;
     static final char[] BRACKET_LEFT = {'(', '{', '['};
     static final char[] BRACKET_RIGHT = {')', '}', ']'};
-
-    public static int solution(String s){
-        int answer = -1;
-        System.out.println(validBracket(s));
-        return answer;
+    
+    public static void main(String[] args) {
+        new Solution().solution("[](){}");
     }
 
-    public static boolean validBracket(String str){
+    public int solution(String s) {
+        int answer = 0;
+
+        Deque<Character> bracketDeque = new ArrayDeque<Character>();
+        for(char data : s.toCharArray()){
+            bracketDeque.add(data);
+        }
+
+        for(int i = 0; i < bracketDeque.size(); i++){
+            answer = validBracket(bracketDeque.iterator()) ? answer + 1 : answer;
+            char bracket = bracketDeque.poll();
+            bracketDeque.addLast(bracket);
+        }
+        
+        return answer;
+    }
+    
+    private boolean validBracket(Iterator<Character> bracketIter){
         Stack<Character> bracketStack = new Stack<Character>();
         boolean isValid = true;
 
-        for(int i = 0; i < str.length(); i++){
-            char bracket = str.charAt(i);
+        while(bracketIter.hasNext()){
+            char bracket = bracketIter.next();
             for(int j = 0; j < BRACKET_LENGTH; j++){
                 if(bracket == BRACKET_LEFT[j]){
                     bracketStack.push(bracket);
