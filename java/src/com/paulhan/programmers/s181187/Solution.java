@@ -14,52 +14,29 @@ public class Solution {
     public static void main(String[] args) throws Exception {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         Solution solution = new Solution();
-        Long answer = solution.solution(3, 4);
+        Long answer = solution.solution(9, 20);
         
-        bw.append(Long.toString(answer));
+        bw.append(Long.toString(answer)).append("\n");
 
         bw.flush();
         bw.close();
     }
 
-    public long solution(int r1, int r2) {
+    private long solution(int r1, int r2) {
         long answer = 0;
 
-        int areaPoint = 1;
-        double x = r2 - areaPoint;
-        double y = 1;
-
-        while(y < r2){
-            while(x > 0){
-                if(isValid(r2, x, y, false)){
-                    if(isValid(r1, x, y, true)){
-                        break;
-                    } else {
-                        x--;
-                        answer++;
-                    }
-                } else if(isValid(r2, x - (areaPoint + 1), y, false)){
-                    areaPoint++;
-                    x = r2 - areaPoint;
-                }
-            }
-
-            x = r2 - areaPoint;
-            y++;
+        for(int i = 1; i <= r2; i++){
+            double r1Point = getPoint(r1, i);
+            double r2Point = getPoint(r2, i);
+            
+            answer += (long)r2Point - (long) Math.ceil(r1Point) + 1;
         }
-
-        answer += r2 - r1 + 1;
         answer *= 4;
 
         return answer;
     }
 
-    private boolean isValid(double r, double x, double y, boolean isAbove){
-        if(isAbove){
-            return Math.pow(r, 2) > Math.pow(-x, 2) + Math.pow(-y, 2);
-        } else {
-            return Math.pow(r, 2) >= Math.pow(-x, 2) + Math.pow(-y, 2);
-        }
+    private double getPoint(int r, int pos){
+        return Math.sqrt(Math.pow(r, 2) - Math.pow(pos, 2));
     }
-
 }
